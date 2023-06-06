@@ -32,9 +32,9 @@ public class ScgApplication {
 					.asyncPredicate(swe -> Mono.just(false)).build();
 			list.add(routeFalse);
 		}
-		Route routeFalse = Route.async().id(ROUTES_NUM + "").uri(HOST)
+		Route routeTrue = Route.async().id(ROUTES_NUM + "").uri(HOST)
 				.asyncPredicate(s -> Mono.just(true)).build();
-		list.add(routeFalse);
+		list.add(routeTrue);
 		return () -> Flux.fromStream(list.stream()).hide();
 	}
 }

@@ -38,8 +38,8 @@ public class CustomRoutePredicateHandlerMapping extends RoutePredicateHandlerMap
                         return route.getPredicate().apply(exchange);
                     } catch (Exception e) {
                         logger.error("Error applying predicate for route: " + route.getId(), e);
-                        return Mono.just(false);
                     }
+                    return Mono.just(false);
                 }).next()
                 .map(route -> {
                     if (logger.isDebugEnabled()) {

@@ -16,7 +16,7 @@ import java.util.List;
 public class NewScgApplication {
 
 	public static void main(String[] args) {
-		//ROUTES_NUM = Integer.parseInt(args[0]);
+		ROUTES_NUM = Integer.parseInt(args[0]);
 		SpringApplication.run(NewScgApplication.class, args);
 	}
 

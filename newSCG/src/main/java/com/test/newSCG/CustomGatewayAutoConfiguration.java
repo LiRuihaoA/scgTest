@@ -44,16 +44,5 @@ public class CustomGatewayAutoConfiguration extends GatewayAutoConfiguration {
             FilteringWebHandler webHandler, RouteLocator routeLocator,
             GlobalCorsProperties globalCorsProperties, Environment environment) {
         return new CustomRoutePredicateHandlerMapping(webHandler, routeLocator, globalCorsProperties, environment);
-        //return new RoutePredicateHandlerMapping(webHandler, routeLocator, globalCorsProperties,environment);
     }
-
-    @Bean
-    @ConditionalOnMissingBean(RoutePredicateHandlerMapping.class)
-    public RoutePredicateHandlerMapping routePredicateHandlerMapping(FilteringWebHandler webHandler,
-                                                                     RouteLocator routeLocator, GlobalCorsProperties globalCorsProperties,
-                                                                     Environment environment) {
-        return new RoutePredicateHandlerMapping(webHandler, routeLocator, globalCorsProperties,
-                environment);
-    }
-
 }
